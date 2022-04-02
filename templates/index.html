@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block main %}
+    <table>
+        <thead>
+            <tr>
+                <th>Symbol</th>
+                <th>Name</th>
+                <th>Shares</th>
+                <th>Price</th>
+                <th>TOTAL</th>
+            </tr>
+        </thead>
+        
+
+        
+        <tbody>
+            <!-- TODO: Loop through the database entries to display them in this table -->
+            {% for i in rows %}
+                <tr>
+                    <td>{{ i.symbol }}</td>
+                    <td>{{ i.name }}</td>
+                    <td>{{ i.shares }}</td>
+                    <td>{{ i.price | usd }}</td>
+                    <td>{{ (i.shares * i.price) | usd}}</td> <!--bruh-->
+                </tr>
+            {% endfor %}
+
+                <tr>
+                    <td colspan="4">CASH</td>
+                    <td>{{ cash | usd }}</td>
+                </tr>
+
+        <tfoot>
+            <tr>
+                <td colspan="4"></td>
+                <td>{{ total_money | usd }}</td>
+            </tr>
+        </tfoot>
+        </tbody>
+    </table>
+{% endblock %}
