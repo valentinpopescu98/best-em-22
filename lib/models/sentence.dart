@@ -9,16 +9,13 @@ abstract class Sentence implements Built<Sentence, SentenceBuilder> {
 
   Sentence._();
 
-  int get id;
+  int? get id;
 
   // String get url;
   String get text;
 
   String? get verb;
   String? get subject;
-
-  @BuiltValueField(wireName: 'img_url')
-  String get imgUrl;
 
   Map<String, dynamic> get json =>
       serializers.serializeWith(serializer, this)! as Map<String, dynamic>;

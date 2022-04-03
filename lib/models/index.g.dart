@@ -278,15 +278,16 @@ class _$SentenceSerializer implements StructuredSerializer<Sentence> {
   Iterable<Object?> serialize(Serializers serializers, Sentence object,
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[
-      'id',
-      serializers.serialize(object.id, specifiedType: const FullType(int)),
       'text',
       serializers.serialize(object.text, specifiedType: const FullType(String)),
-      'img_url',
-      serializers.serialize(object.imgUrl,
-          specifiedType: const FullType(String)),
     ];
     Object? value;
+    value = object.id;
+    if (value != null) {
+      result
+        ..add('id')
+        ..add(serializers.serialize(value, specifiedType: const FullType(int)));
+    }
     value = object.verb;
     if (value != null) {
       result
@@ -317,7 +318,7 @@ class _$SentenceSerializer implements StructuredSerializer<Sentence> {
       switch (key) {
         case 'id':
           result.id = serializers.deserialize(value,
-              specifiedType: const FullType(int)) as int;
+              specifiedType: const FullType(int)) as int?;
           break;
         case 'text':
           result.text = serializers.deserialize(value,
@@ -330,10 +331,6 @@ class _$SentenceSerializer implements StructuredSerializer<Sentence> {
         case 'subject':
           result.subject = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
-          break;
-        case 'img_url':
-          result.imgUrl = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String;
           break;
       }
     }
@@ -1161,29 +1158,20 @@ class MovieBuilder implements Builder<Movie, MovieBuilder> {
 
 class _$Sentence extends Sentence {
   @override
-  final int id;
+  final int? id;
   @override
   final String text;
   @override
   final String? verb;
   @override
   final String? subject;
-  @override
-  final String imgUrl;
 
   factory _$Sentence([void Function(SentenceBuilder)? updates]) =>
       (new SentenceBuilder()..update(updates)).build();
 
-  _$Sentence._(
-      {required this.id,
-      required this.text,
-      this.verb,
-      this.subject,
-      required this.imgUrl})
+  _$Sentence._({this.id, required this.text, this.verb, this.subject})
       : super._() {
-    BuiltValueNullFieldError.checkNotNull(id, 'Sentence', 'id');
     BuiltValueNullFieldError.checkNotNull(text, 'Sentence', 'text');
-    BuiltValueNullFieldError.checkNotNull(imgUrl, 'Sentence', 'imgUrl');
   }
 
   @override
@@ -1200,16 +1188,13 @@ class _$Sentence extends Sentence {
         id == other.id &&
         text == other.text &&
         verb == other.verb &&
-        subject == other.subject &&
-        imgUrl == other.imgUrl;
+        subject == other.subject;
   }
 
   @override
   int get hashCode {
-    return $jf($jc(
-        $jc($jc($jc($jc(0, id.hashCode), text.hashCode), verb.hashCode),
-            subject.hashCode),
-        imgUrl.hashCode));
+    return $jf($jc($jc($jc($jc(0, id.hashCode), text.hashCode), verb.hashCode),
+        subject.hashCode));
   }
 
   @override
@@ -1218,8 +1203,7 @@ class _$Sentence extends Sentence {
           ..add('id', id)
           ..add('text', text)
           ..add('verb', verb)
-          ..add('subject', subject)
-          ..add('imgUrl', imgUrl))
+          ..add('subject', subject))
         .toString();
   }
 }
@@ -1243,10 +1227,6 @@ class SentenceBuilder implements Builder<Sentence, SentenceBuilder> {
   String? get subject => _$this._subject;
   set subject(String? subject) => _$this._subject = subject;
 
-  String? _imgUrl;
-  String? get imgUrl => _$this._imgUrl;
-  set imgUrl(String? imgUrl) => _$this._imgUrl = imgUrl;
-
   SentenceBuilder();
 
   SentenceBuilder get _$this {
@@ -1256,7 +1236,6 @@ class SentenceBuilder implements Builder<Sentence, SentenceBuilder> {
       _text = $v.text;
       _verb = $v.verb;
       _subject = $v.subject;
-      _imgUrl = $v.imgUrl;
       _$v = null;
     }
     return this;
@@ -1277,13 +1256,11 @@ class SentenceBuilder implements Builder<Sentence, SentenceBuilder> {
   _$Sentence build() {
     final _$result = _$v ??
         new _$Sentence._(
-            id: BuiltValueNullFieldError.checkNotNull(id, 'Sentence', 'id'),
+            id: id,
             text:
                 BuiltValueNullFieldError.checkNotNull(text, 'Sentence', 'text'),
             verb: verb,
-            subject: subject,
-            imgUrl: BuiltValueNullFieldError.checkNotNull(
-                imgUrl, 'Sentence', 'imgUrl'));
+            subject: subject);
     replace(_$result);
     return _$result;
   }
