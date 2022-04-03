@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:movie_db/actions/index.dart';
@@ -31,13 +33,18 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            const Text('Hello'),
-            ElevatedButton(
-              onPressed: _navigateToChat,
-              child: const Text("Let's chat"),
-            )
+            Expanded(child: Image.file(File('data/hello.jpg'))),
+            const SizedBox(height: 50,),
+            SizedBox(
+              height: 50,
+              child: ElevatedButton(
+                onPressed: _navigateToChat,
+                child: const Text("Let's chat"),
+              ),
+            ),
+            const SizedBox(height: 50,)
           ],
         ),
       ),
