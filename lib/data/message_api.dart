@@ -15,12 +15,12 @@ class MessageApi {
       "messages": [
         {
           "id": 1,
-          "text": "Hello darling, I was wandering how was your cancer surgery last week",
+          "text": "Good morning! How are you?",
           "sender": "teacher"
         },
         {
           "id": 2,
-          "text": "I'm fine, fuck off",
+          "text": "I'm fine. Where are you from?",
           "sender": "user"
         }
       ]
