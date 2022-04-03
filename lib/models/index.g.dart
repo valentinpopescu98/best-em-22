@@ -401,6 +401,8 @@ class _$AppState extends AppState {
   @override
   final Account? account;
   @override
+  final String? gifUri;
+  @override
   final BuiltList<Movie> movies;
   @override
   final bool isLoading;
@@ -419,6 +421,7 @@ class _$AppState extends AppState {
       this.selectedMessageId,
       required this.simplifiedSentences,
       this.account,
+      this.gifUri,
       required this.movies,
       required this.isLoading,
       this.errMessage,
@@ -449,6 +452,7 @@ class _$AppState extends AppState {
         selectedMessageId == other.selectedMessageId &&
         simplifiedSentences == other.simplifiedSentences &&
         account == other.account &&
+        gifUri == other.gifUri &&
         movies == other.movies &&
         isLoading == other.isLoading &&
         errMessage == other.errMessage &&
@@ -465,10 +469,12 @@ class _$AppState extends AppState {
                     $jc(
                         $jc(
                             $jc(
-                                $jc($jc(0, messages.hashCode),
-                                    selectedMessageId.hashCode),
-                                simplifiedSentences.hashCode),
-                            account.hashCode),
+                                $jc(
+                                    $jc($jc(0, messages.hashCode),
+                                        selectedMessageId.hashCode),
+                                    simplifiedSentences.hashCode),
+                                account.hashCode),
+                            gifUri.hashCode),
                         movies.hashCode),
                     isLoading.hashCode),
                 errMessage.hashCode),
@@ -483,6 +489,7 @@ class _$AppState extends AppState {
           ..add('selectedMessageId', selectedMessageId)
           ..add('simplifiedSentences', simplifiedSentences)
           ..add('account', account)
+          ..add('gifUri', gifUri)
           ..add('movies', movies)
           ..add('isLoading', isLoading)
           ..add('errMessage', errMessage)
@@ -515,6 +522,10 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
   Account? get account => _$this._account;
   set account(Account? account) => _$this._account = account;
 
+  String? _gifUri;
+  String? get gifUri => _$this._gifUri;
+  set gifUri(String? gifUri) => _$this._gifUri = gifUri;
+
   ListBuilder<Movie>? _movies;
   ListBuilder<Movie> get movies => _$this._movies ??= new ListBuilder<Movie>();
   set movies(ListBuilder<Movie>? movies) => _$this._movies = movies;
@@ -545,6 +556,7 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
       _selectedMessageId = $v.selectedMessageId;
       _simplifiedSentences = $v.simplifiedSentences.toBuilder();
       _account = $v.account;
+      _gifUri = $v.gifUri;
       _movies = $v.movies.toBuilder();
       _isLoading = $v.isLoading;
       _errMessage = $v.errMessage;
@@ -576,6 +588,7 @@ class AppStateBuilder implements Builder<AppState, AppStateBuilder> {
               selectedMessageId: selectedMessageId,
               simplifiedSentences: simplifiedSentences.build(),
               account: account,
+              gifUri: gifUri,
               movies: movies.build(),
               isLoading: BuiltValueNullFieldError.checkNotNull(
                   isLoading, 'AppState', 'isLoading'),

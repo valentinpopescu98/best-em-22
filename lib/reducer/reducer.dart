@@ -14,6 +14,9 @@ Reducer<AppState> reducer = combineReducers(<Reducer<AppState>>[
   TypedReducer<AppState, GetMessagesAction>(_getMessages),
   TypedReducer<AppState, GetMessagesActionSuccessful>(_getMessagesSuccessful),
   TypedReducer<AppState, GetMessagesActionError>(_getMessagesError),
+  TypedReducer<AppState, GetGifAction>(_getGif),
+  TypedReducer<AppState, GetGifActionSuccessful>(_getGifSuccessful),
+  TypedReducer<AppState, GetGifActionError>(_getGifError),
   TypedReducer<AppState, ReloadMoviesAction>(_clearMovies),
 ]);
 
@@ -72,5 +75,29 @@ AppState _clearMovies(AppState state, ReloadMoviesAction action) {
     builder
       ..movies.clear()
       ..isLoading = true;
+  });
+}
+
+AppState _getGif(AppState state, GetGifAction action) {
+  return state.rebuild((AppStateBuilder builder) {
+    builder
+      ..isLoading = true
+      ..gifUri = null;
+  });
+}
+
+AppState _getGifSuccessful(AppState state, GetGifActionSuccessful action) {
+  return state.rebuild((AppStateBuilder builder) {
+    builder
+      ..gifUri = action.uri
+      ..isLoading = false;
+  });
+}
+
+AppState _getGifError(AppState state, GetGifActionError action) {
+  return state.rebuild((AppStateBuilder builder) {
+    builder
+      ..isLoading = false
+      ..errMessage = '${action.error}';
   });
 }

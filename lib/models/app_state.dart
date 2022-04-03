@@ -19,6 +19,8 @@ abstract class AppState implements Built<AppState, AppStateBuilder> {
 
   Account? get account;
 
+  String? get gifUri;
+
   BuiltList<Movie> get movies;
 
   bool get isLoading;

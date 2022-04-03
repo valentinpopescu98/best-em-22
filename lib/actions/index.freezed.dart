@@ -14,6 +14,550 @@ final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
 /// @nodoc
+class _$GetGifActionTearOff {
+  const _$GetGifActionTearOff();
+
+  GetGifActionStart call({required String noun, required String verb}) {
+    return GetGifActionStart(
+      noun: noun,
+      verb: verb,
+    );
+  }
+
+  GetGifActionSuccessful successful({required String uri}) {
+    return GetGifActionSuccessful(
+      uri: uri,
+    );
+  }
+
+  GetGifActionError error(
+      {required Object error, required StackTrace stackTrace}) {
+    return GetGifActionError(
+      error: error,
+      stackTrace: stackTrace,
+    );
+  }
+}
+
+/// @nodoc
+const $GetGifAction = _$GetGifActionTearOff();
+
+/// @nodoc
+mixin _$GetGifAction {
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String noun, String verb) $default, {
+    required TResult Function(String uri) successful,
+    required TResult Function(Object error, StackTrace stackTrace) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(String noun, String verb)? $default, {
+    TResult Function(String uri)? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String noun, String verb)? $default, {
+    TResult Function(String uri)? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(GetGifActionStart value) $default, {
+    required TResult Function(GetGifActionSuccessful value) successful,
+    required TResult Function(GetGifActionError value) error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(GetGifActionStart value)? $default, {
+    TResult Function(GetGifActionSuccessful value)? successful,
+    TResult Function(GetGifActionError value)? error,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(GetGifActionStart value)? $default, {
+    TResult Function(GetGifActionSuccessful value)? successful,
+    TResult Function(GetGifActionError value)? error,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GetGifActionCopyWith<$Res> {
+  factory $GetGifActionCopyWith(
+          GetGifAction value, $Res Function(GetGifAction) then) =
+      _$GetGifActionCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$GetGifActionCopyWithImpl<$Res> implements $GetGifActionCopyWith<$Res> {
+  _$GetGifActionCopyWithImpl(this._value, this._then);
+
+  final GetGifAction _value;
+  // ignore: unused_field
+  final $Res Function(GetGifAction) _then;
+}
+
+/// @nodoc
+abstract class $GetGifActionStartCopyWith<$Res> {
+  factory $GetGifActionStartCopyWith(
+          GetGifActionStart value, $Res Function(GetGifActionStart) then) =
+      _$GetGifActionStartCopyWithImpl<$Res>;
+  $Res call({String noun, String verb});
+}
+
+/// @nodoc
+class _$GetGifActionStartCopyWithImpl<$Res>
+    extends _$GetGifActionCopyWithImpl<$Res>
+    implements $GetGifActionStartCopyWith<$Res> {
+  _$GetGifActionStartCopyWithImpl(
+      GetGifActionStart _value, $Res Function(GetGifActionStart) _then)
+      : super(_value, (v) => _then(v as GetGifActionStart));
+
+  @override
+  GetGifActionStart get _value => super._value as GetGifActionStart;
+
+  @override
+  $Res call({
+    Object? noun = freezed,
+    Object? verb = freezed,
+  }) {
+    return _then(GetGifActionStart(
+      noun: noun == freezed
+          ? _value.noun
+          : noun // ignore: cast_nullable_to_non_nullable
+              as String,
+      verb: verb == freezed
+          ? _value.verb
+          : verb // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetGifActionStart implements GetGifActionStart {
+  const _$GetGifActionStart({required this.noun, required this.verb});
+
+  @override
+  final String noun;
+  @override
+  final String verb;
+
+  @override
+  String toString() {
+    return 'GetGifAction(noun: $noun, verb: $verb)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is GetGifActionStart &&
+            (identical(other.noun, noun) ||
+                const DeepCollectionEquality().equals(other.noun, noun)) &&
+            (identical(other.verb, verb) ||
+                const DeepCollectionEquality().equals(other.verb, verb)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(noun) ^
+      const DeepCollectionEquality().hash(verb);
+
+  @JsonKey(ignore: true)
+  @override
+  $GetGifActionStartCopyWith<GetGifActionStart> get copyWith =>
+      _$GetGifActionStartCopyWithImpl<GetGifActionStart>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String noun, String verb) $default, {
+    required TResult Function(String uri) successful,
+    required TResult Function(Object error, StackTrace stackTrace) error,
+  }) {
+    return $default(noun, verb);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(String noun, String verb)? $default, {
+    TResult Function(String uri)? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+  }) {
+    return $default?.call(noun, verb);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String noun, String verb)? $default, {
+    TResult Function(String uri)? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default(noun, verb);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(GetGifActionStart value) $default, {
+    required TResult Function(GetGifActionSuccessful value) successful,
+    required TResult Function(GetGifActionError value) error,
+  }) {
+    return $default(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(GetGifActionStart value)? $default, {
+    TResult Function(GetGifActionSuccessful value)? successful,
+    TResult Function(GetGifActionError value)? error,
+  }) {
+    return $default?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(GetGifActionStart value)? $default, {
+    TResult Function(GetGifActionSuccessful value)? successful,
+    TResult Function(GetGifActionError value)? error,
+    required TResult orElse(),
+  }) {
+    if ($default != null) {
+      return $default(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetGifActionStart implements GetGifAction {
+  const factory GetGifActionStart(
+      {required String noun, required String verb}) = _$GetGifActionStart;
+
+  String get noun => throw _privateConstructorUsedError;
+  String get verb => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $GetGifActionStartCopyWith<GetGifActionStart> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GetGifActionSuccessfulCopyWith<$Res> {
+  factory $GetGifActionSuccessfulCopyWith(GetGifActionSuccessful value,
+          $Res Function(GetGifActionSuccessful) then) =
+      _$GetGifActionSuccessfulCopyWithImpl<$Res>;
+  $Res call({String uri});
+}
+
+/// @nodoc
+class _$GetGifActionSuccessfulCopyWithImpl<$Res>
+    extends _$GetGifActionCopyWithImpl<$Res>
+    implements $GetGifActionSuccessfulCopyWith<$Res> {
+  _$GetGifActionSuccessfulCopyWithImpl(GetGifActionSuccessful _value,
+      $Res Function(GetGifActionSuccessful) _then)
+      : super(_value, (v) => _then(v as GetGifActionSuccessful));
+
+  @override
+  GetGifActionSuccessful get _value => super._value as GetGifActionSuccessful;
+
+  @override
+  $Res call({
+    Object? uri = freezed,
+  }) {
+    return _then(GetGifActionSuccessful(
+      uri: uri == freezed
+          ? _value.uri
+          : uri // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GetGifActionSuccessful implements GetGifActionSuccessful {
+  const _$GetGifActionSuccessful({required this.uri});
+
+  @override
+  final String uri;
+
+  @override
+  String toString() {
+    return 'GetGifAction.successful(uri: $uri)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is GetGifActionSuccessful &&
+            (identical(other.uri, uri) ||
+                const DeepCollectionEquality().equals(other.uri, uri)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(uri);
+
+  @JsonKey(ignore: true)
+  @override
+  $GetGifActionSuccessfulCopyWith<GetGifActionSuccessful> get copyWith =>
+      _$GetGifActionSuccessfulCopyWithImpl<GetGifActionSuccessful>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String noun, String verb) $default, {
+    required TResult Function(String uri) successful,
+    required TResult Function(Object error, StackTrace stackTrace) error,
+  }) {
+    return successful(uri);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(String noun, String verb)? $default, {
+    TResult Function(String uri)? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+  }) {
+    return successful?.call(uri);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String noun, String verb)? $default, {
+    TResult Function(String uri)? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(uri);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(GetGifActionStart value) $default, {
+    required TResult Function(GetGifActionSuccessful value) successful,
+    required TResult Function(GetGifActionError value) error,
+  }) {
+    return successful(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(GetGifActionStart value)? $default, {
+    TResult Function(GetGifActionSuccessful value)? successful,
+    TResult Function(GetGifActionError value)? error,
+  }) {
+    return successful?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(GetGifActionStart value)? $default, {
+    TResult Function(GetGifActionSuccessful value)? successful,
+    TResult Function(GetGifActionError value)? error,
+    required TResult orElse(),
+  }) {
+    if (successful != null) {
+      return successful(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetGifActionSuccessful implements GetGifAction {
+  const factory GetGifActionSuccessful({required String uri}) =
+      _$GetGifActionSuccessful;
+
+  String get uri => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $GetGifActionSuccessfulCopyWith<GetGifActionSuccessful> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GetGifActionErrorCopyWith<$Res> {
+  factory $GetGifActionErrorCopyWith(
+          GetGifActionError value, $Res Function(GetGifActionError) then) =
+      _$GetGifActionErrorCopyWithImpl<$Res>;
+  $Res call({Object error, StackTrace stackTrace});
+}
+
+/// @nodoc
+class _$GetGifActionErrorCopyWithImpl<$Res>
+    extends _$GetGifActionCopyWithImpl<$Res>
+    implements $GetGifActionErrorCopyWith<$Res> {
+  _$GetGifActionErrorCopyWithImpl(
+      GetGifActionError _value, $Res Function(GetGifActionError) _then)
+      : super(_value, (v) => _then(v as GetGifActionError));
+
+  @override
+  GetGifActionError get _value => super._value as GetGifActionError;
+
+  @override
+  $Res call({
+    Object? error = freezed,
+    Object? stackTrace = freezed,
+  }) {
+    return _then(GetGifActionError(
+      error: error == freezed
+          ? _value.error
+          : error // ignore: cast_nullable_to_non_nullable
+              as Object,
+      stackTrace: stackTrace == freezed
+          ? _value.stackTrace
+          : stackTrace // ignore: cast_nullable_to_non_nullable
+              as StackTrace,
+    ));
+  }
+}
+
+/// @nodoc
+
+@Implements(ErrorAction)
+class _$GetGifActionError implements GetGifActionError {
+  const _$GetGifActionError({required this.error, required this.stackTrace});
+
+  @override
+  final Object error;
+  @override
+  final StackTrace stackTrace;
+
+  @override
+  String toString() {
+    return 'GetGifAction.error(error: $error, stackTrace: $stackTrace)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is GetGifActionError &&
+            (identical(other.error, error) ||
+                const DeepCollectionEquality().equals(other.error, error)) &&
+            (identical(other.stackTrace, stackTrace) ||
+                const DeepCollectionEquality()
+                    .equals(other.stackTrace, stackTrace)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(error) ^
+      const DeepCollectionEquality().hash(stackTrace);
+
+  @JsonKey(ignore: true)
+  @override
+  $GetGifActionErrorCopyWith<GetGifActionError> get copyWith =>
+      _$GetGifActionErrorCopyWithImpl<GetGifActionError>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>(
+    TResult Function(String noun, String verb) $default, {
+    required TResult Function(String uri) successful,
+    required TResult Function(Object error, StackTrace stackTrace) error,
+  }) {
+    return error(this.error, stackTrace);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>(
+    TResult Function(String noun, String verb)? $default, {
+    TResult Function(String uri)? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+  }) {
+    return error?.call(this.error, stackTrace);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>(
+    TResult Function(String noun, String verb)? $default, {
+    TResult Function(String uri)? successful,
+    TResult Function(Object error, StackTrace stackTrace)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this.error, stackTrace);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>(
+    TResult Function(GetGifActionStart value) $default, {
+    required TResult Function(GetGifActionSuccessful value) successful,
+    required TResult Function(GetGifActionError value) error,
+  }) {
+    return error(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>(
+    TResult Function(GetGifActionStart value)? $default, {
+    TResult Function(GetGifActionSuccessful value)? successful,
+    TResult Function(GetGifActionError value)? error,
+  }) {
+    return error?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>(
+    TResult Function(GetGifActionStart value)? $default, {
+    TResult Function(GetGifActionSuccessful value)? successful,
+    TResult Function(GetGifActionError value)? error,
+    required TResult orElse(),
+  }) {
+    if (error != null) {
+      return error(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GetGifActionError implements GetGifAction, ErrorAction {
+  const factory GetGifActionError(
+      {required Object error,
+      required StackTrace stackTrace}) = _$GetGifActionError;
+
+  Object get error => throw _privateConstructorUsedError;
+  StackTrace get stackTrace => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $GetGifActionErrorCopyWith<GetGifActionError> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$GetMessagesActionTearOff {
   const _$GetMessagesActionTearOff();
 

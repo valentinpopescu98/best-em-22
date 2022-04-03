@@ -1,7 +1,11 @@
+import 'dart:io';
+
 import 'package:contextmenu/contextmenu.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:movie_db/actions/index.dart';
+import 'package:movie_db/container/gif_container.dart';
+import 'package:movie_db/container/loading_container.dart';
 import 'package:movie_db/container/selected_message_container.dart';
 import 'package:movie_db/models/index.dart';
 import 'package:movie_db/presentation/sentence_widget.dart';
@@ -50,7 +54,7 @@ class _MessageWidgetState extends State<MessageWidget> {
                     Navigator.of(context).pop();
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(
-                        content: Text('Whatever'),
+                        content: Text('Tap on the message to do that'),
                       ),
                     );
                   },
@@ -61,9 +65,30 @@ class _MessageWidgetState extends State<MessageWidget> {
                   title: const Text('Search GIF'),
                   onTap: () {
                     Navigator.of(context).pop();
+
+                    final Store<AppState> store = StoreProvider.of<AppState>(context);
+
+                    // store.dispatch(SimplifyMessage(text: widget.message.text));
+
+                    store.dispatch(GetGifAction(noun: '', verb: "walk"));
+
                     ScaffoldMessenger.of(context).showSnackBar(
                       SnackBar(
-                        content: Text('Foo!'),
+                        content: LoadingContainer(
+                          builder: (BuildContext context, bool isLoading) {
+                            if (isLoading) {
+                              return const CircularProgressIndicator.adaptive();
+                            }
+                            return SizedBox(
+                              height: 200,
+                              child: GifContainer(
+                                builder: (BuildContext context, String gifUri) {
+                                  return gifUri != null ? Image.file(File(gifUri)) : const Text('No matching gif found');
+                                },
+                              ),
+                            );
+                          },
+                        ),
                       ),
                     );
                   },

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
+import 'package:movie_db/data/gif_api.dart';
 import 'package:movie_db/data/message_api.dart';
 import 'package:movie_db/data/simplify_api.dart';
+import 'package:movie_db/epics/gif_epic.dart';
 import 'package:movie_db/epics/message_epic.dart';
 import 'package:movie_db/epics/simplify_epic.dart';
 import 'package:movie_db/presentation/chat_page.dart';
@@ -15,6 +17,7 @@ import 'reducer/reducer.dart';
 void main() {
   final SimplifyEpic simplifyEpic = SimplifyEpic(api: SimplifyApi());
   final MessageEpic messageEpic = MessageEpic(api: MessageApi());
+  final GifEpic gifEpic = GifEpic(api: GifApi());
 
   final Store<AppState> store = Store<AppState>(
     reducer,
@@ -22,6 +25,7 @@ void main() {
     middleware: <Middleware<AppState>>[
       EpicMiddleware<AppState>(simplifyEpic.epics),
       EpicMiddleware<AppState>(messageEpic.epics),
+      EpicMiddleware<AppState>(gifEpic.epics),
     ],
   );
 
